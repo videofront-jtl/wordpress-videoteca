@@ -45,7 +45,7 @@ class Video
     {
         $ch = curl_init ();
 
-        curl_setopt ( $ch, CURLOPT_URL, get_option ( 'videofront_url' ) . $baseurl );
+        curl_setopt ( $ch, CURLOPT_URL, get_option ( 'videofront_url' ) . (substr(get_option ('videofront_url'), -1) != '/' ? '/' : '') . $baseurl );
 
         if ( $post != null ) {
             curl_setopt ( $ch, CURLOPT_POST, true );
