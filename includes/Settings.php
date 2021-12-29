@@ -53,7 +53,7 @@ class Settings
                 <tr valign="top">
                     <th scope="row">Url da Videoteca</th>
                     <td>
-                        <input type="text" name="videofront_url" style="width:80%"
+                        <input type="text" name="videofront_url" style="width:80%" placeholder="https://[PREFIXO].videotecaead.com.br/"
                                value="<?php echo esc_attr ( get_option ( 'videofront_url' ) ); ?>"/>
                         <p><label for="ping_sites">Adicione a URL da Videoteca para a sincronização dos
                                 Vídeos!</label></p>
@@ -63,7 +63,7 @@ class Settings
                 <tr valign="top">
                     <th scope="row">Token da Videoteca</th>
                     <td>
-                        <input type="text" name="videofront_token" style="width:60%"
+                        <input type="text" name="videofront_token" style="width:60%" placeholder="HMAC-SHA1-seu-token"
                                value="<?php echo esc_attr ( get_option ( 'videofront_token' ) ); ?>"/>
                         <p><label for="ping_sites">Token para API poder se comunicar com a Videoteca!</label>
                         </p>
