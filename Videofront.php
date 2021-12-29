@@ -28,10 +28,10 @@ if ( !class_exists ( 'Videofront' ) ) {
 
         public function video_embed ( $content )
         {
-            preg_match_all ( "/videoteca:\/\/\w+/", $content, $matches );
+            preg_match_all ( "/videoteca:\/\/[\w-]+/", $content, $matches );
 
             foreach ( $matches[ 0 ] as $match ) {
-                $identifier = preg_replace ( "/videoteca:\/\/(\w+)/", "$1", $match );
+                $identifier = preg_replace ( "/videoteca:\/\/([\w-]+)/", "$1", $match );
 
                 $player = video::getplayer ( $identifier, "" );
 
@@ -43,7 +43,7 @@ if ( !class_exists ( 'Videofront' ) ) {
 
         public function video_embed_feed ( $content )
         {
-            preg_match_all ( "/videoteca:\/\/\w+/", $content, $matches );
+            preg_match_all ( "/videoteca:\/\/[\w-]+/", $content, $matches );
 
             foreach ( $matches[ 0 ] as $match ) {
                 $content = str_replace ( $match, "", $content );
